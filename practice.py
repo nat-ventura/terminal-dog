@@ -6,11 +6,16 @@ import random
 
 class Dog():
     def __init__(self, name = ""):
-        self.sizes = ["small","medium","large"]
-        self.sleepies = [3,6,9]
+        sizes = ["small","medium","large"]
+        personalities = {}
+        personalities["hyper"] = 0
+        personalities["friendly"] = 2
+        personalities["chill"] = 3
+        personalities["shy"] = 4
         self.name = name
         self.size = random.choice(self.sizes)
-        self.sleepy = random.choice(self.sleepies)
+        self.personality = random.choice(self.personalities.keys())
+        self.sleepy = personalities[self.personality]
 
     def bark(self):
         barks = ["arf arf", "wuf wuf", "borf borf"]
