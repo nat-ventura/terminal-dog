@@ -49,7 +49,8 @@ def pick_action(dog, activities):
 
 def pet(dog):
     print "you pet", dog.name + "\'s", dog.size, "body."
-    print "they seem to like it."
+    if dog.personality == "hyper":
+        print dog.name, ****
     print Dog.bark(dog)
 
 def walk(dog):
