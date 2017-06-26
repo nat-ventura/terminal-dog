@@ -2,7 +2,9 @@
 # nat
 # dog for the terminal
 
-import random
+import random, pickle
+
+# imported pickle to eventually save dog profiles to external txt docs
 
 class Dog():
     def __init__(self, name = ""):

@@ -3,9 +3,11 @@
 # 'git from the bottom up' notes
 
 # REPOSITORY
+# - changes are committed to the repository from the staging area using git-commit
 # - collections of commits
 # - each is an archive of what the proj's working tree looked like in past
 # - contains set of branches and tags to identify certain commits by name
+# - earlier states of the working tree can be checked out from repository at any time with `git-checkout`
 
 
 # STAGING AREA
@@ -13,6 +15,7 @@
 # - way of "confirming" changes before commit (which records all changes at once)
 
 # WORKING TREE
+# - changes to the WORKING TREE are registered in the index with git-add
 # - working tree == any directory on your file system with REPOSITORY associated
 # - (you can tell if repository associated when sub-dir is named .git)
 # - includes all files and sub-dirs in that directory
