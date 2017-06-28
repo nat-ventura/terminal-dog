@@ -18,6 +18,7 @@ class Dog():
         self.size = random.choice(self.sizes)
         self.personality = random.choice(self.personalities.keys())
         self.sleepy = personalities[self.personality]
+        self.dogbook = {}
 
     def bark(self):
         barks = ["arf arf", "wuf wuf", "borf borf"]
@@ -31,7 +32,7 @@ def pick_action(dog, activities):
     chosen = False
     while not chosen:
         choice = int(raw_input("what do you want to do? "))
-        if choice in range(4):
+        if choice in range(5):
             if choice == 0:
                 pet(dog)
                 dog.sleepy += 1
@@ -44,6 +45,8 @@ def pick_action(dog, activities):
             elif choice == 3:
                 feed(dog)
                 dog.sleepy += 1
+            elif choice == 4:
+                save(dog)
             chosen = True
         else:
             print "please just select one, i have limited capacities."
@@ -66,6 +69,12 @@ def hug(dog):
 def feed(dog):
     print "you give", dog.name, "some food."
     print "they eat it up."
+
+def save(dog):
+    dog_file = open('dogbook.pickle', 'w')
+    pickle.dump(dogbook, dog_file)
+    dog_file.close()
+    print "Dog saved."
 
 def main():
     activities = ["pet","walk","hug","feed"]
